@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   redirect.c                                         :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/06 05:38:43 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/06 06:47:28 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,26 @@
 #include <stddef.h>
 #include <stdarg.h>
 
-int	ft_printf(const char *string, ...)
-{
-	int	count;
-	va_list	args;
-	va_start(args, string);
 
-	count = 0;
-	if (!string)
+int	ft_printf(const char *s, ...)
+{
+	int	*count;
+	va_list	args;
+
+	if (!s)
 		return (-1);
-	
-	return (count);
+	va_start(args, s);
+	*count = 0;
+	while (*s)
+	{
+		if (*s == '%')
+			dispatch(*++s, args, count);
+		else
+		{
+			write(1, s, 1);
+			(*count)++;
+		}
+	s++;
+	}
+	return (*count);
 }

@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/09 18:38:32 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/09 20:06:19 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,59 @@
 void	dispatch(char c, va_list args, int *count)
 {
 	if (c == '%')
-		putpurcent(c, count);
+		count_print(c, count);
 	else if (c == 'c')
-		ft_putchar(args, count);
+	{
+		c = (char)va_arg(args, int);
+		count_print(c, count);
+	}
 	else if (c == 's')
 		ft_putstr(args, count);
 	else if (c == 'i' || c == 'd')
 		number_decimal(args, count);
 	else if (c == 'u')
 		number_unsigned(args, count);
-	// else if (c == 'x' || c == 'X')
-	// 	number_hexa(args, count);
+	else if (c == 'x' || c == 'X')
+		number_hexa(args, c, count);
 }
 
-void	puthexa(int n, int *count)
+void	puthexa(long n, char c, int *count)
 {
-	int	index;
 	int		i;
 	int		nbr;
+	char	list[20];
 
-	if (n < 0)
-		n = (signed char)n;
-	if (n > 0)
+	i = 0;
+	while (n > 0)
 	{
-		nbr = n & 16;
-
+		nbr = n % 16;
+		if (nbr < 10)
+			list[i] = nbr + '0';
+		else
+		{
+			if (c == 'X')
+				list[i] = nbr - 10 + 'A';
+			else
+				list[i] = nbr - 10 + 'a';
+		}
+		n = n / 16;
+		i++;
 	}
+	while (--i >= 0)
+		count_print(list[i], count);
 }
 
-void	number_hexa(va_list args, int *count)
+void	number_hexa(va_list args, char c, int *count)
 {
-	int	n;
+	int		n;
+	long	l;
 
 	n = va_arg(args, int);
-	puthexa(n, count);
+	l = (unsigned int)n;
+	if (n == 0)
+		count_print('0', count);
+	else
+		puthexa(l, c, count);
 }
 
 void	number_decimal(va_list args, int *count)
@@ -93,14 +112,10 @@ void	ft_putnbr(int n, int *count)
 		if (n < 0)
 		{
 			n = n * -1;
-			write(1, "-", 1);
-			(*count)++;
+			count_print('-', count);
 		}
 		if (n < 10)
-		{
-			write(1, &(char){n + '0'}, 1);
-			(*count)++;
-		}
+			count_print((char){n + '0'}, count);
 		if (n >= 10)
 		{
 			ft_putnbr(n / 10, count);
@@ -122,16 +137,7 @@ void	ft_putstr(va_list args, int *count)
 	}
 }
 
-void	ft_putchar(va_list args, int *count)
-{
-	char	c;
-
-	c = (char)va_arg(args, int);
-	write(1, &c, 1);
-	(*count)++;
-}
-
-void	putpurcent(char c, int *count)
+void	count_print(char c, int *count)
 {
 	write(1, &c, 1);
 	(*count)++;

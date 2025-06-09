@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/07 17:45:32 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/09 14:11:27 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ int	main(void)
 {
 	char	*str;
 	char	carac;
+	char	*string;
 
-	carac = 'U';
-	str = "here = %c!";
-	ft_printf(str, carac);
+	carac = '1';
+	string = "ligne";
+	str = "here = %s + %c\n";
+	ft_printf(str, string, carac);
 }

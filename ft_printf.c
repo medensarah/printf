@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/09 16:56:51 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:33:26 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	main(void)
 
 	carac = '1';
 	string = "ligne";
-	integer = 95;
+	integer = -95;
 	unsign = 255;
-	ft_printf("mine = %u\n", unsign);
-	printf("real = %x\n", integer);
+	// ft_printf("mine = %u\n", unsign);
+	printf("real = %x\n", 0);
 }

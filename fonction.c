@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/09 17:11:40 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/09 18:38:32 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,31 @@ void	dispatch(char c, va_list args, int *count)
 		number_decimal(args, count);
 	else if (c == 'u')
 		number_unsigned(args, count);
-	else if (c == 'x' || c == 'X')
-		number_hexadecimal(args, count);
+	// else if (c == 'x' || c == 'X')
+	// 	number_hexa(args, count);
+}
+
+void	puthexa(int n, int *count)
+{
+	int	index;
+	int		i;
+	int		nbr;
+
+	if (n < 0)
+		n = (signed char)n;
+	if (n > 0)
+	{
+		nbr = n & 16;
+
+	}
+}
+
+void	number_hexa(va_list args, int *count)
+{
+	int	n;
+
+	n = va_arg(args, int);
+	puthexa(n, count);
 }
 
 void	number_decimal(va_list args, int *count)

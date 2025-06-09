@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/09 14:11:27 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/09 16:56:51 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printf(const char *s, ...)
 {
-	int	*count;
-	int	num;
+	int		*count;
+	int		num;
 	va_list	args;
 
 	if (!s)
@@ -36,15 +36,17 @@ int	ft_printf(const char *s, ...)
 	}
 	return (*count);
 }
-
 int	main(void)
 {
-	char	*str;
 	char	carac;
 	char	*string;
+	int		integer;
+	unsigned	unsign;
 
 	carac = '1';
 	string = "ligne";
-	str = "here = %s + %c\n";
-	ft_printf(str, string, carac);
+	integer = 95;
+	unsign = 255;
+	ft_printf("mine = %u\n", unsign);
+	printf("real = %x\n", integer);
 }

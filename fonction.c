@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 20:26:06 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 21:23:31 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,19 @@ void	puthexa(unsigned int n, char c, int *count)
 	}
 	while (--i >= 0)
 		count_print(list[i], count);
+	free(list);
 }
 
 void	number_adress(va_list args, char c, int *count)
 {
-	long	l;
+	unsigned long int	l;
 
-	l = (unsigned int)va_arg(args, long);
+	l = (unsigned int)va_arg(args, unsigned long int);
 	if (l == 0)
-		count_print('0', count);
+	{
+		write(1, "(null)", 6);
+		(*count) += 6;
+	}
 	else
 	{
 		write(1, "0x", 2);
@@ -144,13 +148,20 @@ void	ft_putnbr(int n, int *count)
 void	ft_putstr(va_list args, int *count)
 {
 	char	*s;
+	int	i;
 
+	i = 0;
 	s = va_arg(args, char *);
-	while (*s)
+	if (!s)
 	{
-		write(1, &*s, 1);
+		write(1, "(null)", 6);
+		(*count) += 6;
+	}
+	while (s[i])
+	{
+		write(1, &s[i], 1);
 		(*count)++;
-		s++;
+		i++;
 	}
 }
 

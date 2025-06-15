@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/15 20:29:45 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 20:29:48 by smedenec         ###   ########.fr       */
+/*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
+/*   Updated: 2025/06/15 20:47:01 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdio.h>
-// a enlever
-
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>

@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 20:26:15 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 21:20:59 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_printf(const char *s, ...)
 {
 	int		*count;
 	int		num;
-
 	va_list	args;
 
 	if (!s)
@@ -45,13 +44,14 @@ int	ft_printf(const char *s, ...)
 // 	unsigned	unsign;
 // 	int	a;
 // 	int	b;
-//
-//
+
+
 // 	carac = '1';
-// 	string = "Purcent";
+// 	string = "urcent";
 // 	integer = -4967297;
 // 	unsign = -2147483648;
 // 	a = printf("v= %p%s\n", string, string);
 // 	b = ft_printf("m= %p%s\n", string, string);
 // 	printf("Vret= %d\nMret= %d\n", a, b);
+// 	free(string);
 // }

@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 20:05:22 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 20:15:10 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	number_adress(va_list args, char c, int *count)
 	else
 	{
 		write(1, "0x", 2);
-		count = count + 2;
+		(*count) += 2;
 		puthexa(l, c, count);
 	}
 }
@@ -121,7 +121,7 @@ void	ft_putnbr(int n, int *count)
 	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		count += 11;
+		(*count) += 11;
 	}
 	else
 	{

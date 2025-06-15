@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 20:11:01 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 20:18:36 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ int	main(void)
 
 
 	carac = '1';
-	string = "iigne";
+	string = "Purcent";
 	integer = -4967297;
 	unsign = -2147483648;
-	a = printf("v= %d\n", unsign);
-	b = ft_printf("m= %d\n", unsign);
+	a = printf("v= %p%s\n", string, string);
+	b = ft_printf("m= %p%s\n", string, string);
 	printf("Vret= %d\nMret= %d\n", a, b);
 }

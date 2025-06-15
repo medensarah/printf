@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/09 20:06:19 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 20:05:22 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ void	dispatch(char c, va_list args, int *count)
 		number_unsigned(args, count);
 	else if (c == 'x' || c == 'X')
 		number_hexa(args, c, count);
+	else if (c == 'p')
+		number_adress(args, c, count);
 }
 
-void	puthexa(long n, char c, int *count)
+void	puthexa(unsigned int n, char c, int *count)
 {
 	int		i;
 	int		nbr;
@@ -55,6 +57,20 @@ void	puthexa(long n, char c, int *count)
 	}
 	while (--i >= 0)
 		count_print(list[i], count);
+}
+void	number_adress(va_list args, char c, int *count)
+{
+	long	l;
+
+	l = (unsigned int)va_arg(args, long);
+	if (l == 0)
+		count_print('0', count);
+	else
+	{
+		write(1, "0x", 2);
+		count = count + 2;
+		puthexa(l, c, count);
+	}
 }
 
 void	number_hexa(va_list args, char c, int *count)

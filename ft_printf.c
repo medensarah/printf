@@ -6,17 +6,17 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 20:18:36 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 20:26:15 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *s, ...)
 {
 	int		*count;
 	int		num;
-	int		a;
+
 	va_list	args;
 
 	if (!s)
@@ -37,21 +37,21 @@ int	ft_printf(const char *s, ...)
 	}
 	return (*count);
 }
-int	main(void)
-{
-	char	carac;
-	char	*string;
-	unsigned int		integer;
-	unsigned	unsign;
-	int	a;
-	int	b;
-
-
-	carac = '1';
-	string = "Purcent";
-	integer = -4967297;
-	unsign = -2147483648;
-	a = printf("v= %p%s\n", string, string);
-	b = ft_printf("m= %p%s\n", string, string);
-	printf("Vret= %d\nMret= %d\n", a, b);
-}
+// int	main(void)
+// {
+// 	char	carac;
+// 	char	*string;
+// 	unsigned int		integer;
+// 	unsigned	unsign;
+// 	int	a;
+// 	int	b;
+//
+//
+// 	carac = '1';
+// 	string = "Purcent";
+// 	integer = -4967297;
+// 	unsign = -2147483648;
+// 	a = printf("v= %p%s\n", string, string);
+// 	b = ft_printf("m= %p%s\n", string, string);
+// 	printf("Vret= %d\nMret= %d\n", a, b);
+// }

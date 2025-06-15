@@ -6,11 +6,11 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 20:15:10 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 20:26:06 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	dispatch(char c, va_list args, int *count)
 {
@@ -58,6 +58,7 @@ void	puthexa(unsigned int n, char c, int *count)
 	while (--i >= 0)
 		count_print(list[i], count);
 }
+
 void	number_adress(va_list args, char c, int *count)
 {
 	long	l;

@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 21:20:59 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 21:54:28 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,4 @@ int	ft_printf(const char *s, ...)
 // 	a = printf("v= %p%s\n", string, string);
 // 	b = ft_printf("m= %p%s\n", string, string);
 // 	printf("Vret= %d\nMret= %d\n", a, b);
-// 	free(string);
 // }

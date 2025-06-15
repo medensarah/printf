@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 21:23:31 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/15 21:56:54 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,38 +33,36 @@ void	dispatch(char c, va_list args, int *count)
 		number_adress(args, c, count);
 }
 
-void	puthexa(unsigned int n, char c, int *count)
+void	puthexa(long unsigned int n, char c, int *count)
 {
-	int		i;
-	int		nbr;
-	char	list[20];
+	char	*base;
+	char	a;
 
-	i = 0;
-	while (n > 0)
+	base = "0123456789abcdef";
+	if (c == 'X')
+		base = "0123456789ABCDEF";
+	if (n < 0)
 	{
-		nbr = n % 16;
-		if (nbr < 10)
-			list[i] = nbr + '0';
-		else
-		{
-			if (c == 'X')
-				list[i] = nbr - 10 + 'A';
-			else
-				list[i] = nbr - 10 + 'a';
-		}
-		n = n / 16;
-		i++;
+		n = n * -1;
+		count_print('-', count);
 	}
-	while (--i >= 0)
-		count_print(list[i], count);
-	free(list);
+	if (n < 16)
+	{
+		a = base[n];
+		count_print(a, count);
+	}
+	if (n >= 16)
+	{
+		puthexa(n / 16, c, count);
+		puthexa(n % 16, c, count);
+	}
 }
 
 void	number_adress(va_list args, char c, int *count)
 {
 	unsigned long int	l;
 
-	l = (unsigned int)va_arg(args, unsigned long int);
+	l = va_arg(args, unsigned long int);
 	if (l == 0)
 	{
 		write(1, "(null)", 6);
@@ -80,12 +78,10 @@ void	number_adress(va_list args, char c, int *count)
 
 void	number_hexa(va_list args, char c, int *count)
 {
-	int		n;
-	long	l;
+	unsigned long int	l;
 
-	n = va_arg(args, int);
-	l = (unsigned int)n;
-	if (n == 0)
+	l = va_arg(args, unsigned long int);
+	if (l == 0)
 		count_print('0', count);
 	else
 		puthexa(l, c, count);

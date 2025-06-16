@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 21:56:54 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:10:21 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	dispatch(char c, va_list args, int *count)
 		number_adress(args, c, count);
 }
 
-void	puthexa(long unsigned int n, char c, int *count)
+void	puthexa(unsigned long n, char c, int *count)
 {
 	char	*base;
 	char	a;
@@ -55,65 +55,6 @@ void	puthexa(long unsigned int n, char c, int *count)
 	{
 		puthexa(n / 16, c, count);
 		puthexa(n % 16, c, count);
-	}
-}
-
-void	number_adress(va_list args, char c, int *count)
-{
-	unsigned long int	l;
-
-	l = va_arg(args, unsigned long int);
-	if (l == 0)
-	{
-		write(1, "(null)", 6);
-		(*count) += 6;
-	}
-	else
-	{
-		write(1, "0x", 2);
-		(*count) += 2;
-		puthexa(l, c, count);
-	}
-}
-
-void	number_hexa(va_list args, char c, int *count)
-{
-	unsigned long int	l;
-
-	l = va_arg(args, unsigned long int);
-	if (l == 0)
-		count_print('0', count);
-	else
-		puthexa(l, c, count);
-}
-
-void	number_decimal(va_list args, int *count)
-{
-	int	n;
-
-	n = va_arg(args, int);
-	ft_putnbr(n, count);
-}
-
-void	number_unsigned(va_list args, int *count)
-{
-	unsigned int	n;
-
-	n = va_arg(args, unsigned int);
-	putnbr_unsigned(n, count);
-}
-
-void	putnbr_unsigned(unsigned int n, int *count)
-{
-	if (n < 10)
-	{
-		write(1, &(char){n + '0'}, 1);
-		(*count)++;
-	}
-	if (n >= 10)
-	{
-		putnbr_unsigned(n / 10, count);
-		putnbr_unsigned(n % 10, count);
 	}
 }
 
@@ -144,7 +85,7 @@ void	ft_putnbr(int n, int *count)
 void	ft_putstr(va_list args, int *count)
 {
 	char	*s;
-	int	i;
+	int		i;
 
 	i = 0;
 	s = va_arg(args, char *);
@@ -152,6 +93,7 @@ void	ft_putstr(va_list args, int *count)
 	{
 		write(1, "(null)", 6);
 		(*count) += 6;
+		return ;
 	}
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 05:06:35 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 21:53:27 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/16 19:53:11 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	putnbr_unsigned(unsigned int n, int *count);
 void	number_decimal(va_list args, int *count);
 void	number_unsigned(va_list args, int *count);
 void	number_hexa(va_list args, char c, int *count);
-void	puthexa(unsigned long int n, char c, int *count);
+void	puthexa(unsigned long n, char c, int *count);
 void	number_adress(va_list args, char c, int *count);
 
 #endif

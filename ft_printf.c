@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/15 21:54:28 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/16 17:45:28 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,27 @@ int	ft_printf(const char *s, ...)
 	}
 	return (*count);
 }
-// int	main(void)
-// {
-// 	char	carac;
-// 	char	*string;
-// 	unsigned int		integer;
-// 	unsigned	unsign;
-// 	int	a;
-// 	int	b;
+int	main(void)
+{
+	char	carac;
+	char	*string;
+	int		*point;
+	int		integer;
+
+	int	mine;
+	int	real;
 
 
-// 	carac = '1';
-// 	string = "urcent";
-// 	integer = -4967297;
-// 	unsign = -2147483648;
-// 	a = printf("v= %p%s\n", string, string);
-// 	b = ft_printf("m= %p%s\n", string, string);
-// 	printf("Vret= %d\nMret= %d\n", a, b);
-// }
+	carac = '%';
+	string = "non";
+	integer = -4967297;
+	point = &integer;
+	//
+	printf("real\n");
+	real = printf("s = %s p = %p\n", string, point);
+	printf("return = %d\n", real);
+	//
+	printf("mine\n");
+	mine = ft_printf("s = %s p = %p\n", string, point);
+	printf("return = %d\n", mine);
+}

@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/16 20:06:38 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/17 17:54:27 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,33 +36,24 @@ int	ft_printf(const char *s, ...)
 	}
 	return (*count);
 }
+
 // int	main(void)
 // {
-// 	char	carac;
-// 	char	*string;
-// 	int		*point;
-// 	int		integer;
-// 	long int	min;
-// 	long int	max;
+// 	char		*string;
+// 	int			*point;
+// 	int			integer;
 
-// 	int	mine;
-// 	int	real;
+// 	int			mine;
+// 	int			real;
 
-// 	carac = '%';
 // 	string = "non";
 // 	integer = 96;
 // 	point = &integer;
-// 	min = -2147483648;
-// 	max = - 2147483647;
-
-// 	//
 // 	printf("real\n");
-// 	real = printf("Long min = %p Long max = %p integer = %p String = %p\n",
-//(void*)&min, (void*)&max, point, string);
+// 	real = printf("integer = %p String = %p\n", point, string);
 // 	printf("return = %d\n", real);
 // 	//
 // 	printf("mine\n");
-// 	mine = ft_printf("Long min = %p Long max = %p integer = %p String = %p\n",
-//(void*)&min, (void*)&max, point, string);
+// 	mine = ft_printf("integer = %p String = %p\n", point, string);
 // 	printf("return = %d\n", mine);
 // }

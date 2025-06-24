@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/17 17:54:27 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/24 20:07:57 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_printf(const char *s, ...)
 		}
 	s++;
 	}
-	return (*count);
+	return (num);
 }
 
 // int	main(void)

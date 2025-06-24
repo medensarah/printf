@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 04:48:37 by smedenec          #+#    #+#             */
-/*   Updated: 2025/06/24 20:07:57 by smedenec         ###   ########.fr       */
+/*   Updated: 2025/06/24 20:34:17 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,15 @@ int	ft_printf(const char *s, ...)
 	}
 	return (num);
 }
-
 // int	main(void)
 // {
 // 	char		*string;
 // 	int			*point;
 // 	int			integer;
-
 // 	int			mine;
-// 	int			real;
-
 // 	string = "non";
 // 	integer = 96;
 // 	point = &integer;
-// 	printf("real\n");
-// 	real = printf("integer = %p String = %p\n", point, string);
-// 	printf("return = %d\n", real);
-// 	//
 // 	printf("mine\n");
 // 	mine = ft_printf("integer = %p String = %p\n", point, string);
 // 	printf("return = %d\n", mine);
